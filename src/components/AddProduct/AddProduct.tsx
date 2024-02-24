@@ -15,7 +15,7 @@ export default function AddProduct({}: Props) {
 
   const sanitizeInput = (input: string): string => {
     return input.replace(/<[^>]*>?/gm, ''); 
-};
+  };
 
   const imageHandler = (e: ChangeEvent<HTMLInputElement>): void => {
     if (e.target.files) {
@@ -47,7 +47,9 @@ export default function AddProduct({}: Props) {
       formData.append("product", image);
     }
 
-    await fetch("http://localhost:5100/upload", {
+    
+
+    await fetch("https://ecommerce-backend-7fnr0mqga-renstrio24p.vercel.app/upload", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -66,11 +68,11 @@ export default function AddProduct({}: Props) {
       });
 
       if(responseData[0].success){
-         await fetch('http://localhost:5100/addproductoffline',({
+         await fetch('https://ecommerce-backend-7fnr0mqga-renstrio24p.vercel.app/addproduct',({
             method: 'POST',
             headers: {
                Accept: 'application/json',
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
               },
               body: JSON.stringify(product)
          })).then((res: Response) => res.json()).then((data: any)=>{

@@ -11,7 +11,7 @@ export default function ListProduct({}: Props) {
   const fetchInfo = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5100/allofflineproducts");
+      const response = await fetch("http://localhost:5100/allproducts");
       if (!response.ok) {
         throw new Error("Failed to fetch products");
       }
@@ -31,7 +31,7 @@ export default function ListProduct({}: Props) {
   const removeProduct = async (id: number) => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5100/removeofflineproduct', {
+      const response = await fetch('https://ecommerce-backend-7fnr0mqga-renstrio24p.vercel.app/removeproduct', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
