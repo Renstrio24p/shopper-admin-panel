@@ -34941,7 +34941,8 @@ function AddProduct({}) {
     if (image) {
       formData.append("product", image);
     }
-    yield fetch("http://localhost:5100/upload", {
+    yield fetch("https://ecommerce-backend-7fnr0mq\
+ga-renstrio24p.vercel.app/upload", {
       method: "POST",
       headers: {
         Accept: "application/json"
@@ -34956,8 +34957,8 @@ function AddProduct({}) {
       }
     });
     if (responseData[0].success) {
-      yield fetch("http://localhost:5100/addproduc\
-toffline", {
+      yield fetch("https://ecommerce-backend-7fnr0\
+mqga-renstrio24p.vercel.app/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -35086,7 +35087,7 @@ function ListProduct({}) {
     try {
       setLoading(true);
       const response = yield fetch("http://localho\
-st:5100/allofflineproducts");
+st:5100/allproducts");
       if (!response.ok) {
         throw new Error("Failed to fetch products");
       }
@@ -35106,8 +35107,9 @@ d");
   function* () {
     try {
       setLoading(true);
-      const response = yield fetch("http://localho\
-st:5100/removeofflineproduct", {
+      const response = yield fetch("https://ecomme\
+rce-backend-7fnr0mqga-renstrio24p.vercel.app/remov\
+eproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
