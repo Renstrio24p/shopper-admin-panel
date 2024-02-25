@@ -47,9 +47,7 @@ export default function AddProduct({}: Props) {
       formData.append("product", image);
     }
 
-    
-
-    await fetch("https://ecommerce-backend-7fnr0mqga-renstrio24p.vercel.app/upload", {
+    await fetch("http://localhost:5100/upload", {
       method: "POST",
       headers: {
         Accept: "application/json",
