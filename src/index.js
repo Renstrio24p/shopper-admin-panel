@@ -34941,8 +34941,7 @@ function AddProduct({}) {
     if (image) {
       formData.append("product", image);
     }
-    yield fetch("https://ecommerce-backend-7fnr0mq\
-ga-renstrio24p.vercel.app/upload", {
+    yield fetch("http://localhost:5100/upload", {
       method: "POST",
       headers: {
         Accept: "application/json"
@@ -35107,9 +35106,8 @@ d");
   function* () {
     try {
       setLoading(true);
-      const response = yield fetch("https://ecomme\
-rce-backend-7fnr0mqga-renstrio24p.vercel.app/remov\
-eproduct", {
+      const response = yield fetch("http://localho\
+st:5100/removeproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
